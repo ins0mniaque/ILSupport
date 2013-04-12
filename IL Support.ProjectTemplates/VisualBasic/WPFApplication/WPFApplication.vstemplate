@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Project" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name>WPF Application with IL Support</Name>
+    <Description>A project for creating a Windows Presentation Foundation client application that supports embedding and calling IL code</Description>
+    <Icon Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4583" />
+    <TemplateID>ILSupport.VisualBasic.Windows.WpfApplication</TemplateID>
+    <ProjectType>VisualBasic</ProjectType>
+    <SortOrder>11</SortOrder>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>WpfApplication</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <PromptForSaveOnCreation>false</PromptForSaveOnCreation>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <RequiredFrameworkVersion>3.0</RequiredFrameworkVersion>
+    <CreateInPlace>false</CreateInPlace>
+  </TemplateData>
+  <TemplateContent>
+    <Project File="WPFApplication.vbproj" ReplaceParameters="true">
+      <ProjectItem ReplaceParameters="true" TargetFileName="My Project\AssemblyInfo.vb">AssemblyInfo.vb</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="My Project\Resources.resx">Resources.resx</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="My Project\Resources.Designer.vb">Resources.Designer.vb</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="My Project\Settings.settings">Settings.settings</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="My Project\Settings.Designer.vb">Settings.Designer.vb</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="My Project\MyExtensions\MyWpfExtension.vb">MyWpfExtension.vb</ProjectItem>
+      <ProjectItem ReplaceParameters="true" OpenInEditor="true" SubType="Code" OpenOrder="20">MainWindow.xaml.vb</ProjectItem>
+      <ProjectItem ReplaceParameters="true" OpenInEditor="true" SubType="Code" OpenOrder="30">MainWindow.xaml.il</ProjectItem>
+      <ProjectItem ReplaceParameters="true" OpenInEditor="true" OpenOrder="10">MainWindow.xaml</ProjectItem>
+      <ProjectItem ReplaceParameters="true">Application.xaml</ProjectItem>
+      <ProjectItem ReplaceParameters="true" SubType="Code">Application.xaml.vb</ProjectItem>
+      <ProjectItem ReplaceParameters="true">App.config</ProjectItem>
+    </Project>
+  </TemplateContent>
+</VSTemplate>

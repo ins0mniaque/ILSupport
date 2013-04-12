@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Vsix xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="1.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2010">
+  <Identifier Id="ILSupport.Express">
+    <Name>IL Support Express</Name>
+    <Author>Jean-Philippe Leconte</Author>
+    <Version>2.0</Version>
+    <Description xml:space="preserve">Provides project templates for C#, F# and Visual Basic that support embedding and calling IL (Intermediate Language) code.</Description>
+    <Locale>1033</Locale>
+    <License>license.txt</License>
+    <Icon>icon.png</Icon>
+    <PreviewImage>screenshot.png</PreviewImage>
+    <SupportedProducts>
+      <VisualStudio Version="10.0">
+        <Edition>Express_All</Edition>
+      </VisualStudio>
+      <VisualStudio Version="11.0">
+        <Edition>Express_All</Edition>
+      </VisualStudio>
+    </SupportedProducts>
+    <SupportedFrameworkRuntimeEdition MinVersion="4.0" MaxVersion="4.5" />
+    <SystemComponent>false</SystemComponent>
+  </Identifier>
+  <References />
+  <Content>
+    <ProjectTemplate>ProjectTemplates</ProjectTemplate>
+  </Content>
+</Vsix>

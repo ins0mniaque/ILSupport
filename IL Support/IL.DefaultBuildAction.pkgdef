@@ -1,0 +1,11 @@
+; .il files in Windows C# projects
+[$RootKey$\Projects\{fae04ec0-301f-11d3-bf4b-00c04f79efbc}\FileExtensions\.il]
+"DefaultBuildAction"="Compile"
+
+; .il files in Windows FSharp projects
+[$RootKey$\Projects\{f2a71f9b-5d33-465a-a702-920d77279786}\FileExtensions\.il]
+"DefaultBuildAction"="Compile"
+
+; .il files in Windows VisualBasic projects
+[$RootKey$\Projects\{f184b08f-c81c-45f6-a57f-5abd9991f28f}\FileExtensions\.il]
+"DefaultBuildAction"="Compile"

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Project" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name>Empty Project with IL Support</Name>
+    <Description>An empty project for creating a local application that supports embedding and calling IL code</Description>
+    <Icon Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="4502" />
+    <ProjectType>VisualBasic</ProjectType>
+    <SortOrder>100</SortOrder>
+    <TemplateID>ILSupport.VisualBasic.Windows.EmptyProject</TemplateID>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>Project</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+    <CreateInPlace>false</CreateInPlace>
+  </TemplateData>
+  <TemplateContent>
+    <Project File="EmptyProject.vbproj" ReplaceParameters="true">
+      <ProjectItem ReplaceParameters="true">App.config</ProjectItem>
+    </Project>
+  </TemplateContent>
+</VSTemplate>

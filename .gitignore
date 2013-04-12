@@ -1,0 +1,7 @@
+*.suo
+*.user
+*.cache
+*.tss
+
+obj/
+bin/
