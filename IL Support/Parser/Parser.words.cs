@@ -9,7 +9,7 @@ namespace ILSupport
 {
     public static partial class ILParser
     {
-        private class WordCategory
+        public class WordCategory
         {
             public WordCategory ( string @class, string [ ] words )
             {
@@ -33,7 +33,7 @@ namespace ILSupport
             return null;
         }
 
-        private static readonly WordCategory [ ] wordCategories =
+        public static readonly WordCategory [ ] wordCategories =
         {
             new WordCategory ( "il.instruction",
                                new [ ] { "nop", "break",
