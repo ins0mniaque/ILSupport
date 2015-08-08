@@ -77,14 +77,11 @@
     <None Include="CSharp\ClassLibrary\AssemblyInfo.cs" />
     <None Include="CSharp\ClassLibrary\Class1.cs" />
     <None Include="CSharp\ClassLibrary\Class1.il" />
-    <None Include="CSharp\ClassLibrary\ClassLibrary.csproj" />
     <None Include="CSharp\ConsoleApplication\App.config" />
     <None Include="CSharp\ConsoleApplication\AssemblyInfo.cs" />
-    <None Include="CSharp\ConsoleApplication\ConsoleApplication.csproj" />
     <None Include="CSharp\ConsoleApplication\Program.cs" />
     <None Include="CSharp\ConsoleApplication\Program.il" />
     <None Include="CSharp\EmptyProject\App.config" />
-    <None Include="CSharp\EmptyProject\EmptyProject.csproj" />
     <None Include="CSharp\PortableClassLibrary\Class1.il" />
     <None Include="CSharp\WindowsApplication\App.config" />
     <None Include="CSharp\WindowsApplication\AssemblyInfo.cs" />
@@ -96,7 +93,6 @@
     <None Include="CSharp\WindowsApplication\Resources.resx" />
     <None Include="CSharp\WindowsApplication\Settings.Designer.cs" />
     <None Include="CSharp\WindowsApplication\Settings.settings" />
-    <None Include="CSharp\WindowsApplication\WindowsApplication.csproj" />
     <None Include="CSharp\WPFApplication\App.config" />
     <None Include="CSharp\WPFApplication\App.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -114,23 +110,33 @@
     <None Include="CSharp\WPFApplication\Resources.resx" />
     <None Include="CSharp\WPFApplication\Settings.Designer.cs" />
     <None Include="CSharp\WPFApplication\Settings.settings" />
-    <None Include="CSharp\WPFApplication\WPFApplication.csproj" />
     <None Include="FSharp\ConsoleApplication\App.config" />
-    <None Include="FSharp\ConsoleApplication\ConsoleApplication.fsproj" />
+    <None Include="FSharp\ConsoleApplication\ConsoleApplication.fsproj">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ConsoleApplication.tt</DependentUpon>
+    </None>
     <None Include="FSharp\ConsoleApplication\Program.fs" />
     <None Include="FSharp\ConsoleApplication\Program.il" />
-    <None Include="FSharp\Library\Library.fsproj" />
+    <None Include="FSharp\Library\Library.fsproj">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Library.tt</DependentUpon>
+    </None>
     <None Include="FSharp\Library\Library1.fs" />
     <None Include="FSharp\Library\Library1.il" />
     <None Include="FSharp\Library\Script.fsx" />
-    <None Include="FSharp\PortableLibrary\PortableLibrary.fsproj" />
+    <None Include="FSharp\PortableLibrary\PortableLibrary.fsproj">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PortableLibrary.tt</DependentUpon>
+    </None>
     <None Include="FSharp\PortableLibrary\PortableLibrary1.il" />
     <None Include="Properties\AssemblyInfo.cs" />
     <None Include="IL Support.targets" />
     <None Include="VisualBasic\ClassLibrary\AssemblyInfo.vb" />
     <None Include="VisualBasic\ClassLibrary\Class1.il" />
     <None Include="VisualBasic\ClassLibrary\Class1.vb" />
-    <None Include="VisualBasic\ClassLibrary\ClassLibrary.vbproj" />
     <None Include="VisualBasic\ClassLibrary\MyApplication.Designer.vb" />
     <None Include="VisualBasic\ClassLibrary\MyApplication.myapp" />
     <None Include="VisualBasic\ClassLibrary\Resources.Designer.vb" />
@@ -139,7 +145,6 @@
     <None Include="VisualBasic\ClassLibrary\Settings.settings" />
     <None Include="VisualBasic\ConsoleApplication\App.config" />
     <None Include="VisualBasic\ConsoleApplication\AssemblyInfo.vb" />
-    <None Include="VisualBasic\ConsoleApplication\ConsoleApplication.vbproj" />
     <None Include="VisualBasic\ConsoleApplication\Module1.il" />
     <None Include="VisualBasic\ConsoleApplication\Module1.vb" />
     <None Include="VisualBasic\ConsoleApplication\MyApplication.Designer.vb" />
@@ -149,7 +154,6 @@
     <None Include="VisualBasic\ConsoleApplication\Settings.Designer.vb" />
     <None Include="VisualBasic\ConsoleApplication\Settings.settings" />
     <None Include="VisualBasic\EmptyProject\App.config" />
-    <None Include="VisualBasic\EmptyProject\EmptyProject.vbproj" />
     <None Include="VisualBasic\PortableClassLibrary\Class1.il" />
     <None Include="VisualBasic\WindowsApplication\App.config" />
     <None Include="VisualBasic\WindowsApplication\AssemblyInfo.vb" />
@@ -163,7 +167,6 @@
     <None Include="VisualBasic\WindowsApplication\Resources.resx" />
     <None Include="VisualBasic\WindowsApplication\Settings.Designer.vb" />
     <None Include="VisualBasic\WindowsApplication\Settings.settings" />
-    <None Include="VisualBasic\WindowsApplication\WindowsApplication.vbproj" />
     <None Include="VisualBasic\WPFApplication\App.config" />
     <None Include="VisualBasic\WPFApplication\Application.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -182,7 +185,6 @@
     <None Include="VisualBasic\WPFApplication\Resources.resx" />
     <None Include="VisualBasic\WPFApplication\Settings.Designer.vb" />
     <None Include="VisualBasic\WPFApplication\Settings.settings" />
-    <None Include="VisualBasic\WPFApplication\WPFApplication.vbproj" />
     <VSTemplate Include="CSharp\ClassLibrary\ClassLibrary.vstemplate">
       <OutputSubPath>IL Support</OutputSubPath>
     </VSTemplate>
@@ -247,7 +249,6 @@
     <None Include="CSharp\PortableClassLibrary\Class1.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="CSharp\PortableClassLibrary\PortableClassLibrary.csproj" />
     <VSTemplate Include="CSharp\PortableClassLibrary\PortableClassLibrary.vstemplate">
       <OutputSubPath>IL Support</OutputSubPath>
     </VSTemplate>
@@ -258,10 +259,134 @@
     <None Include="FSharp\PortableLibrary\Script.fsx" />
     <None Include="VisualBasic\PortableClassLibrary\AssemblyInfo.vb" />
     <None Include="VisualBasic\PortableClassLibrary\Class1.vb" />
-    <None Include="VisualBasic\PortableClassLibrary\PortableClassLibrary.vbproj" />
     <VSTemplate Include="VisualBasic\PortableClassLibrary\PortableClassLibrary.vstemplate">
       <OutputSubPath>IL Support</OutputSubPath>
     </VSTemplate>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CSharp\ClassLibrary\ClassLibrary.csproj">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ClassLibrary.tt</DependentUpon>
+    </Content>
+    <Content Include="CSharp\ClassLibrary\ClassLibrary.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ClassLibrary.csproj</LastGenOutput>
+    </Content>
+    <Content Include="CSharp\ConsoleApplication\ConsoleApplication.csproj">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ConsoleApplication.tt</DependentUpon>
+    </Content>
+    <Content Include="CSharp\ConsoleApplication\ConsoleApplication.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ConsoleApplication.csproj</LastGenOutput>
+    </Content>
+    <Content Include="CSharp\EmptyProject\EmptyProject.csproj">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmptyProject.tt</DependentUpon>
+    </Content>
+    <Content Include="CSharp\EmptyProject\EmptyProject.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EmptyProject.csproj</LastGenOutput>
+    </Content>
+    <Content Include="CSharp\PortableClassLibrary\PortableClassLibrary.csproj">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PortableClassLibrary.tt</DependentUpon>
+    </Content>
+    <Content Include="CSharp\PortableClassLibrary\PortableClassLibrary.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>PortableClassLibrary.csproj</LastGenOutput>
+    </Content>
+    <Content Include="CSharp\WindowsApplication\WindowsApplication.csproj">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WindowsApplication.tt</DependentUpon>
+    </Content>
+    <Content Include="CSharp\WindowsApplication\WindowsApplication.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>WindowsApplication.csproj</LastGenOutput>
+    </Content>
+    <Content Include="CSharp\WPFApplication\WPFApplication.csproj">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WPFApplication.tt</DependentUpon>
+    </Content>
+    <Content Include="CSharp\WPFApplication\WPFApplication.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>WPFApplication.csproj</LastGenOutput>
+    </Content>
+    <Content Include="FSharp\ConsoleApplication\ConsoleApplication.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ConsoleApplication.fsproj</LastGenOutput>
+    </Content>
+    <Content Include="FSharp\Library\Library.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Library.fsproj</LastGenOutput>
+    </Content>
+    <Content Include="FSharp\PortableLibrary\PortableLibrary.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>PortableLibrary.fsproj</LastGenOutput>
+    </Content>
+    <Content Include="VisualBasic\ClassLibrary\ClassLibrary.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ClassLibrary.vbproj</LastGenOutput>
+    </Content>
+    <Content Include="VisualBasic\ClassLibrary\ClassLibrary.vbproj">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ClassLibrary.tt</DependentUpon>
+    </Content>
+    <Content Include="VisualBasic\ConsoleApplication\ConsoleApplication.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ConsoleApplication.vbproj</LastGenOutput>
+    </Content>
+    <Content Include="VisualBasic\ConsoleApplication\ConsoleApplication.vbproj">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ConsoleApplication.tt</DependentUpon>
+    </Content>
+    <Content Include="VisualBasic\EmptyProject\EmptyProject.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EmptyProject.vbproj</LastGenOutput>
+    </Content>
+    <Content Include="VisualBasic\EmptyProject\EmptyProject.vbproj">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmptyProject.tt</DependentUpon>
+    </Content>
+    <Content Include="VisualBasic\PortableClassLibrary\PortableClassLibrary.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>PortableClassLibrary.vbproj</LastGenOutput>
+    </Content>
+    <Content Include="VisualBasic\PortableClassLibrary\PortableClassLibrary.vbproj">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PortableClassLibrary.tt</DependentUpon>
+    </Content>
+    <Content Include="VisualBasic\WindowsApplication\WindowsApplication.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>WindowsApplication.vbproj</LastGenOutput>
+    </Content>
+    <Content Include="VisualBasic\WindowsApplication\WindowsApplication.vbproj">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WindowsApplication.tt</DependentUpon>
+    </Content>
+    <Content Include="VisualBasic\WPFApplication\WPFApplication.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>WPFApplication.vbproj</LastGenOutput>
+    </Content>
+    <Content Include="VisualBasic\WPFApplication\WPFApplication.vbproj">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WPFApplication.tt</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
