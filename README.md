@@ -1,7 +1,7 @@
 IL Support extension
 ====================
 
-IL Support is an extension for Visual Studio 2010 and 2012 that provides syntax highlighting for the IL (Intermediate Language) and project templates for C#, F# and Visual Basic that support embedding and calling IL code. You can download it through the Extension Manager, or on [Visual Studio Gallery](http://visualstudiogallery.msdn.microsoft.com/44034a7b-143d-4b51-b7bc-99aa656ba137).
+IL Support is an extension for Visual Studio 2010, 2012, 2013 and 2015 that provides syntax highlighting for the IL (Intermediate Language) and project templates for C#, F# and Visual Basic that support embedding and calling IL code. You can download it through the Extension Manager, or on [Visual Studio Gallery](http://visualstudiogallery.msdn.microsoft.com/44034a7b-143d-4b51-b7bc-99aa656ba137).
 
 Syntax Highlighting
 -------------------
@@ -40,14 +40,15 @@ Modifying your own projects to allow IL embedding
 -------------------------------------------------
 
   1. Edit your project file and insert [this](https://raw.github.com/ins0mniaque/ILSupport/master/IL%20Support.ProjectTemplates/IL%20Support.targets) __before__ the following section (which should be at the end)
-
-     `<!-- To modify your build process, add your task inside one of the targets below and uncomment it.`
-     `     Other similar extension points exist, see Microsoft.Common.targets.`
-     `<Target Name="BeforeBuild">`
-     `</Target>`
-     `<Target Name="AfterBuild">`
-     `</Target>`
-     `-->`
+```
+     <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+          Other similar extension points exist, see Microsoft.Common.targets.
+     <Target Name="BeforeBuild">
+     </Target>
+     <Target Name="AfterBuild">
+     </Target>
+     -->
+```
 
   2. You're done! Create a new project with IL Support if you need an example of how to embed IL.
 
