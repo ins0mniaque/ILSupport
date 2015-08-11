@@ -40,7 +40,7 @@ Modifying your own projects to allow IL embedding
 -------------------------------------------------
 
   1. Edit your project file and insert [this](https://raw.github.com/ins0mniaque/ILSupport/master/IL%20Support.ProjectTemplates/IL%20Support.targets) __before__ the following section (which should be at the end)
-```
+    ```
      <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
           Other similar extension points exist, see Microsoft.Common.targets.
      <Target Name="BeforeBuild">
@@ -48,7 +48,7 @@ Modifying your own projects to allow IL embedding
      <Target Name="AfterBuild">
      </Target>
      -->
-```
+     ```
 
   2. You're done! Create a new project with IL Support if you need an example of how to embed IL.
 
