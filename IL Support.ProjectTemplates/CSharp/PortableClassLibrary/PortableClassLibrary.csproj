@@ -67,11 +67,14 @@
     <GetFrameworkSdkPath>
       <Output TaskParameter="Path" PropertyName="FrameworkSdkPath" />
     </GetFrameworkSdkPath>
-    <PropertyGroup Condition=" Exists ( '$(FrameworkSdkPath)bin\ildasm.exe' ) ">
+    <PropertyGroup>
       <ILDasm>"$(FrameworkSdkPath)bin\ildasm.exe" /nobar /linenum /output:"$(ILFile)" @(IntermediateAssembly->'"%(FullPath)"', ' ')</ILDasm>
     </PropertyGroup>
     <PropertyGroup Condition=" Exists ( '$(FrameworkSdkPath)bin\NETFX 4.0 Tools\ildasm.exe' ) ">
       <ILDasm>"$(FrameworkSdkPath)bin\NETFX 4.0 Tools\ildasm.exe" /nobar /linenum /output:"$(ILFile)" @(IntermediateAssembly->'"%(FullPath)"', ' ')</ILDasm>
+    </PropertyGroup>
+    <PropertyGroup Condition=" Exists ( '$(FrameworkSdkPath)bin\NETFX 4.5.1 Tools\ildasm.exe' ) ">
+      <ILDasm>"$(FrameworkSdkPath)bin\NETFX 4.5.1 Tools\ildasm.exe" /nobar /linenum /output:"$(ILFile)" @(IntermediateAssembly->'"%(FullPath)"', ' ')</ILDasm>
     </PropertyGroup>
     <PropertyGroup Condition=" Exists ( '$(FrameworkSdkPath)bin\NETFX 4.6 Tools\ildasm.exe' ) ">
       <ILDasm>"$(FrameworkSdkPath)bin\NETFX 4.6 Tools\ildasm.exe" /nobar /linenum /output:"$(ILFile)" @(IntermediateAssembly->'"%(FullPath)"', ' ')</ILDasm>
