@@ -3,7 +3,7 @@
   <Identifier Id="ILSupport">
     <Name>IL Support</Name>
     <Author>Jean-Philippe Leconte, Floatas</Author>
-    <Version>2.1</Version>
+    <Version>2.2</Version>
     <Description xml:space="preserve">Provides syntax highlighting for the IL (Intermediate Language) and project templates for C#, F# and Visual Basic that support embedding and calling IL code.</Description>
     <Locale>1033</Locale>
     <License>license.txt</License>
