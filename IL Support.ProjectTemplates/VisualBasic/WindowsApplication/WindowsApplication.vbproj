@@ -168,9 +168,9 @@ $endif$
     <PropertyGroup>
       <ILSource>$([System.IO.File]::ReadAllText($(ILFile)))</ILSource>
       <Replacement>// method ${method} forwardref removed for IL import</Replacement>
-      <Pattern>\.method [^\)]+\) cil managed forwardref[^}]+} // end of method (?&lt;method&gt;[^ \r\t\n]+)</Pattern>
+      <Pattern>\.method [^{}]+ cil managed forwardref[^}]+} // end of method (?&lt;method&gt;[^ \r\t\n]+)</Pattern>
       <ILSource>$([System.Text.RegularExpressions.Regex]::Replace($(ILSource), $(Pattern), $(Replacement)))</ILSource>
-      <Pattern>\.method [^\)]+\) cil managed[^\a]+"extern was not given a DllImport attribute"[^}]+} // end of method (?&lt;method&gt;[^ \r\t\n]+)</Pattern>
+      <Pattern>\.method [^{}]+ cil managed[^\a]+"extern was not given a DllImport attribute"[^}]+} // end of method (?&lt;method&gt;[^ \r\t\n]+)</Pattern>
       <ILSource>$([System.Text.RegularExpressions.Regex]::Replace($(ILSource), $(Pattern), $(Replacement)))</ILSource>
     </PropertyGroup>
     <WriteLinesToFile File="$(ILFile)" Lines="$(ILSource)" Overwrite="true" />
