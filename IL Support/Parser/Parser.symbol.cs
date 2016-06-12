@@ -1,9 +1,6 @@
-using System;
-using System.Collections.Generic;
 using System.Linq;
+
 using Microsoft.VisualStudio.Language.StandardClassification;
-using Microsoft.VisualStudio.Text;
-using Microsoft.VisualStudio.Text.Classification;
 
 namespace ILSupport
 {
@@ -21,12 +18,14 @@ namespace ILSupport
             public string Symbols = null;
         }
 
-        private static readonly SymbolCategory [ ] symbolCategories =
+        public static string GetSymbols ( string @class )
         {
-            new SymbolCategory ( PredefinedClassificationTypeNames.Operator, "!+-*/\\=<>`" ),
-        };
+            return symbolCategories.Where  ( category => category.Class == @class )
+                                   .Select ( category => category.Symbols )
+                                   .FirstOrDefault ( );
+        }
 
-        private static string IdentifySymbolClass ( char symbol )
+        public static string IdentifySymbolClass ( char symbol )
         {
             foreach ( var category in symbolCategories )
                 if ( category.Symbols.Contains ( symbol ) )
@@ -34,5 +33,10 @@ namespace ILSupport
 
             return null;
         }
+
+        private static readonly SymbolCategory [ ] symbolCategories =
+        {
+            new SymbolCategory ( PredefinedClassificationTypeNames.Operator, "!+-*/\\=<>`" ),
+        };
     }
 }

@@ -1,9 +1,7 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
+
 using Microsoft.VisualStudio.Language.StandardClassification;
-using Microsoft.VisualStudio.Text;
-using Microsoft.VisualStudio.Text.Classification;
 
 namespace ILSupport
 {
@@ -25,12 +23,6 @@ namespace ILSupport
             public readonly string Escape;
         }
 
-        private static readonly Span [ ] spans = { new Span ( PredefinedClassificationTypeNames.Comment,   "/*",  "*/", null   ),
-                                                   new Span ( PredefinedClassificationTypeNames.Comment,   "//",  "\n", null   ),
-                                                   new Span ( PredefinedClassificationTypeNames.String,    "@\"", "\"", "\"\"" ),
-                                                   new Span ( PredefinedClassificationTypeNames.String,    "\"",  "\"", "\\\"" ),
-                                                   new Span ( PredefinedClassificationTypeNames.Character, "'",   "'",  "\\\'" ) };
-
         private static readonly int spanStartMaxLength = spans.Max ( s => s.Start.Length );
         private static Span IdentifySpan ( string text, int position )
         {
@@ -41,5 +33,11 @@ namespace ILSupport
 
             return null;
         }
+
+        private static readonly Span [ ] spans = { new Span ( PredefinedClassificationTypeNames.Comment,   "/*",  "*/", null   ),
+                                                   new Span ( PredefinedClassificationTypeNames.Comment,   "//",  "\n", null   ),
+                                                   new Span ( PredefinedClassificationTypeNames.String,    "@\"", "\"", "\"\"" ),
+                                                   new Span ( PredefinedClassificationTypeNames.String,    "\"",  "\"", "\\\"" ),
+                                                   new Span ( PredefinedClassificationTypeNames.Character, "'",   "'",  "\\\'" ) };
     }
 }

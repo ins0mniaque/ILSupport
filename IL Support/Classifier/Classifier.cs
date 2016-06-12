@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+
 using Microsoft.VisualStudio.Text;
 using Microsoft.VisualStudio.Text.Classification;
 
@@ -23,7 +24,7 @@ namespace ILSupport.Text.Classification
             var snapshot = span.Snapshot;
             var start    = span.Start.Position;
 
-            return ILParser.Parse ( span.GetText ( ) )
+            return ILParser.Parse  ( span.GetText ( ) )
                            .Select ( token => new ClassificationSpan ( new SnapshotSpan ( snapshot,
                                                                                           start + token.Start, token.Length ),
                                                                        classificationTypeRegistry.GetClassificationType ( token.Class ) ) )

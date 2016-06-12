@@ -1,9 +1,6 @@
-using System;
-using System.Collections.Generic;
 using System.Linq;
+
 using Microsoft.VisualStudio.Language.StandardClassification;
-using Microsoft.VisualStudio.Text;
-using Microsoft.VisualStudio.Text.Classification;
 
 namespace ILSupport
 {
@@ -21,7 +18,14 @@ namespace ILSupport
             public string [ ] Words = null;
         }
 
-        private static string IdentifyWordClass ( string word )
+        public static string [ ] GetWords ( string @class )
+        {
+            return wordCategories.Where  ( category => category.Class == @class )
+                                 .Select ( category => category.Words )
+                                 .FirstOrDefault ( );
+        }
+
+        public static string IdentifyWordClass ( string word )
         {
             if ( char.IsDigit ( word [ 0 ] ) )
                 return PredefinedClassificationTypeNames.Number;
