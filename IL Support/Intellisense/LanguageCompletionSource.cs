@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Resources;
+using System.Windows.Media;
 
 using Microsoft.VisualStudio.Language.Intellisense;
 using Microsoft.VisualStudio.Text;
@@ -10,20 +11,20 @@ namespace ILSupport.Intellisense
 {
     internal class LanguageCompletionSource : ICompletionSource
     {
-        private LanguageCompletionSourceProvider m_sourceProvider;
-        private ITextBuffer m_textBuffer;
+        private LanguageCompletionSourceProvider provider;
+        private ITextBuffer                      textBuffer;
 
-        public LanguageCompletionSource ( LanguageCompletionSourceProvider sourceProvider, ITextBuffer textBuffer )
+        public LanguageCompletionSource ( LanguageCompletionSourceProvider provider, ITextBuffer textBuffer )
         {
-            m_sourceProvider = sourceProvider;
-            m_textBuffer     = textBuffer;
+            this.provider   = provider;
+            this.textBuffer = textBuffer;
         }
 
         void ICompletionSource.AugmentCompletionSession ( ICompletionSession session, IList < CompletionSet > completionSets )
         {
             var instructionSet = new CompletionSet ( "il.instruction",
                                                      "Instructions",   // TODO: Localize this...
-                                                     FindTokenSpanAtPosition ( session.GetTriggerPoint ( m_textBuffer ), session ),
+                                                     FindTokenSpanAtPosition ( session.GetTriggerPoint ( textBuffer ), session ),
                                                      Instructions,
                                                      null );
 
@@ -33,19 +34,19 @@ namespace ILSupport.Intellisense
         private ITrackingSpan FindTokenSpanAtPosition ( ITrackingPoint point, ICompletionSession session )
         {
             var currentPoint = session.TextView.Caret.Position.BufferPosition - 1;
-            var navigator    = m_sourceProvider.NavigatorService.GetTextStructureNavigator ( m_textBuffer );
+            var navigator    = provider.NavigatorService.GetTextStructureNavigator ( textBuffer );
             var extent       = navigator.GetExtentOfWord ( currentPoint );
 
             return currentPoint.Snapshot.CreateTrackingSpan ( extent.Span, SpanTrackingMode.EdgeInclusive );
         }
 
-        private bool m_isDisposed;
+        private bool disposed = false;
         public void Dispose ( )
         {
-            if ( ! m_isDisposed )
+            if ( ! disposed )
             {
                 GC.SuppressFinalize ( this );
-                m_isDisposed = true;
+                disposed = true;
             }
         }
 
@@ -55,10 +56,40 @@ namespace ILSupport.Intellisense
             get { return instructions ?? ( instructions = GenerateInstructions ( ) ); }
         }
 
-        private static IEnumerable < Completion > GenerateInstructions ( )
+        private IEnumerable < Completion > GenerateInstructions ( )
         {
             foreach ( var word in ILParser.GetWords ( "il.instruction" ).OrderBy ( word => word ) )
-                yield return new Completion ( word, word, Descriptions.GetString ( word.ToLowerInvariant ( ) ), null, word );
+                yield return new Completion ( word,
+                                              word,
+                                              Descriptions.GetString ( word.ToLowerInvariant ( ) ),
+                                              word.EndsWith ( "." ) ? PrefixInstructionIcon : InstructionIcon,
+                                              word );
+        }
+
+        private ImageSource instructionIcon = null;
+        private ImageSource InstructionIcon
+        {
+            get
+            {
+                if ( instructionIcon == null )
+                    instructionIcon = provider.GlyphService.GetGlyph ( StandardGlyphGroup.GlyphGroupMethod,
+                                                                       StandardGlyphItem .GlyphItemPublic );
+
+                return instructionIcon;
+            }
+        }
+
+        private ImageSource prefixInstructionIcon = null;
+        private ImageSource PrefixInstructionIcon
+        {
+            get
+            {
+                if ( prefixInstructionIcon == null )
+                    prefixInstructionIcon = provider.GlyphService.GetGlyph ( StandardGlyphGroup.GlyphGroupIntrinsic,
+                                                                             StandardGlyphItem .GlyphItemPublic );
+
+                return prefixInstructionIcon;
+            }
         }
 
         private static ResourceManager descriptions = null;
