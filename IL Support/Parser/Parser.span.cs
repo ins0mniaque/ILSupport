@@ -23,7 +23,6 @@ namespace ILSupport
             public readonly string Escape;
         }
 
-        private static readonly int spanStartMaxLength = spans.Max ( s => s.Start.Length );
         private static Span IdentifySpan ( string text, int position )
         {
             var part = text.Substring ( position, Math.Min ( spanStartMaxLength, text.Length - position ) );
@@ -39,5 +38,7 @@ namespace ILSupport
                                                    new Span ( PredefinedClassificationTypeNames.String,    "@\"", "\"", "\"\"" ),
                                                    new Span ( PredefinedClassificationTypeNames.String,    "\"",  "\"", "\\\"" ),
                                                    new Span ( PredefinedClassificationTypeNames.Character, "'",   "'",  "\\\'" ) };
+
+        private static readonly int spanStartMaxLength = spans.Max ( s => s.Start.Length );
     }
 }
