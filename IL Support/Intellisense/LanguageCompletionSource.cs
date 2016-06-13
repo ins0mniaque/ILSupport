@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Resources;
 
 using Microsoft.VisualStudio.Language.Intellisense;
@@ -56,7 +57,7 @@ namespace ILSupport.Intellisense
 
         private static IEnumerable < Completion > GenerateInstructions ( )
         {
-            foreach ( var word in ILParser.GetWords ( "il.instruction" ) )
+            foreach ( var word in ILParser.GetWords ( "il.instruction" ).OrderBy ( word => word ) )
                 yield return new Completion ( word, word, Descriptions.GetString ( word.ToLowerInvariant ( ) ), null, word );
         }
 
