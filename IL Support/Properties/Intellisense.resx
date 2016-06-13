@@ -762,19 +762,19 @@
   <data name="endfilter" xml:space="preserve">
     <value>Transfers control from the filter clause of an exception back to the Common Language Infrastructure (CLI) exception handler.</value>
   </data>
-  <data name="unaligned" xml:space="preserve">
+  <data name="unaligned." xml:space="preserve">
     <value>Indicates that an address currently atop the evaluation stack might not be aligned to the natural size of the immediately following ldind, stind, ldfld, stfld, ldobj, stobj, initblk, or cpblk instruction.</value>
   </data>
-  <data name="volatile" xml:space="preserve">
+  <data name="volatile." xml:space="preserve">
     <value>Specifies that an address currently atop the evaluation stack might be volatile, and the results of reading that location cannot be cached or that multiple stores to that location cannot be suppressed.</value>
   </data>
-  <data name="tailcall" xml:space="preserve">
+  <data name="tail." xml:space="preserve">
     <value>Performs a postfixed method call instruction such that the current method's stack frame is removed before the actual call instruction is executed.</value>
   </data>
   <data name="initobj" xml:space="preserve">
     <value>Initializes each field of the value type at a specified address to a null reference or a 0 of the appropriate primitive type.</value>
   </data>
-  <data name="constrained" xml:space="preserve">
+  <data name="constrained." xml:space="preserve">
     <value>Constrains the type on which a virtual method call is made.</value>
   </data>
   <data name="cpblk" xml:space="preserve">
@@ -792,7 +792,40 @@
   <data name="refanytype" xml:space="preserve">
     <value>Retrieves the type token embedded in a typed reference.</value>
   </data>
-  <data name="readonly" xml:space="preserve">
+  <data name="readonly." xml:space="preserve">
     <value>Specifies that the subsequent array address operation performs no type check at run time, and that it returns a managed pointer whose mutability is restricted.</value>
+  </data>
+  <data name="brinst" xml:space="preserve">
+    <value>Transfers control to a target instruction if value is true, not null, or non-zero.</value>
+  </data>
+  <data name="brinst.s" xml:space="preserve">
+    <value>Transfers control to a target instruction (short form) if value is true, not null, or non-zero.</value>
+  </data>
+  <data name="brnull" xml:space="preserve">
+    <value>Transfers control to a target instruction if value is false, a null reference (Nothing in Visual Basic), or zero.</value>
+  </data>
+  <data name="brnull.s" xml:space="preserve">
+    <value>Transfers control to a target instruction if value is false, a null reference, or zero.</value>
+  </data>
+  <data name="brzero" xml:space="preserve">
+    <value>Transfers control to a target instruction if value is false, a null reference (Nothing in Visual Basic), or zero.</value>
+  </data>
+  <data name="brzero.s" xml:space="preserve">
+    <value>Transfers control to a target instruction if value is false, a null reference, or zero.</value>
+  </data>
+  <data name="endfault" xml:space="preserve">
+    <value>Transfers control from the fault or finally clause of an exception block back to the Common Language Infrastructure (CLI) exception handler.</value>
+  </data>
+  <data name="endmac" xml:space="preserve">
+    <value>This is an internal instruction indicating the end of a macro.</value>
+  </data>
+  <data name="illegal" xml:space="preserve">
+    <value>This is an internal instruction representing an illegal instruction.</value>
+  </data>
+  <data name="ldelem.u8" xml:space="preserve">
+    <value>Loads the element with type unsigned int64 at a specified array index onto the top of the evaluation stack as an int64.</value>
+  </data>
+  <data name="ldind.u8" xml:space="preserve">
+    <value>Loads a value of type unsigned int64 as an int64 onto the evaluation stack indirectly.</value>
   </data>
 </root>
