@@ -57,7 +57,7 @@ namespace ILSupport.Intellisense
         private static IEnumerable < Completion > GenerateInstructions ( )
         {
             foreach ( var word in ILParser.GetWords ( "il.instruction" ) )
-                yield return new Completion ( word, word, Descriptions.GetString ( word ), null, word );
+                yield return new Completion ( word, word, Descriptions.GetString ( word.ToLowerInvariant ( ) ), null, word );
         }
 
         private static ResourceManager descriptions = null;
