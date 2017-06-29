@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.14
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IL Support", "IL Support\IL Support.csproj", "{BF205896-9741-4035-B0BA-4030C92036B6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IL Support.ProjectTemplates", "IL Support.ProjectTemplates\IL Support.ProjectTemplates.csproj", "{3D3F3159-8C4A-41A2-BC84-CEC268BC918E}"
