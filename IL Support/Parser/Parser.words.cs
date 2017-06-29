@@ -1,9 +1,6 @@
-using System;
-using System.Collections.Generic;
 using System.Linq;
+
 using Microsoft.VisualStudio.Language.StandardClassification;
-using Microsoft.VisualStudio.Text;
-using Microsoft.VisualStudio.Text.Classification;
 
 namespace ILSupport
 {
@@ -21,7 +18,14 @@ namespace ILSupport
             public string [ ] Words = null;
         }
 
-        private static string IdentifyWordClass ( string word )
+        public static string [ ] GetWords ( string @class )
+        {
+            return wordCategories.Where  ( category => category.Class == @class )
+                                 .Select ( category => category.Words )
+                                 .FirstOrDefault ( );
+        }
+
+        public static string IdentifyWordClass ( string word )
         {
             if ( char.IsDigit ( word [ 0 ] ) )
                 return PredefinedClassificationTypeNames.Number;
@@ -55,20 +59,20 @@ namespace ILSupport
                                          "or", "xor", "shl", "shr", "shr.un", "neg", "not",
                                          "conv.i1", "conv.i2", "conv.i4", "conv.i8", "conv.r4", "conv.r8", "conv.u4", "conv.u8",
                                          "callvirt", "cpobj", "ldobj", "ldstr", "newobj", "castclass", "isinst", "conv.r.un",
-                                         "unbox", "throw", "ldfld", "ldflda", "stfld", "ldsfld", "ldsflda", "stsfld", "stobj",
+                                         "unbox", "unbox.any", "throw", "ldfld", "ldflda", "stfld", "ldsfld", "ldsflda", "stsfld", "stobj",
                                          "conv.ovf.i1.un", "conv.ovf.i2.un", "conv.ovf.i4.un", "conv.ovf.i8.un",
                                          "conv.ovf.u1.un", "conv.ovf.u2.un", "conv.ovf.u4.un", "conv.ovf.u8.un",
                                          "conv.ovf.i.un", "conv.ovf.u.un",
-                                         "box", "newarr", "ldlen", "ldelema", "ldelem.i1", "ldelem.u1", "ldelem.i2", "ldelem.u2",
+                                         "box", "newarr", "ldlen", "ldelem", "ldelema", "ldelem.i1", "ldelem.u1", "ldelem.i2", "ldelem.u2",
                                          "ldelem.i4", "ldelem.u4", "ldelem.i8", "ldelem.i", "ldelem.r4", "ldelem.r8", "ldelem.ref",
-                                         "stelem.i", "stelem.i1", "stelem.i2", "stelem.i4", "stelem.i8", "stelem.r4", "stelem.r8", "stelem.ref",
+                                         "stelem", "stelem.i", "stelem.i1", "stelem.i2", "stelem.i4", "stelem.i8", "stelem.r4", "stelem.r8", "stelem.ref",
                                          "conv.ovf.i1", "conv.ovf.u1", "conv.ovf.i2", "conv.ovf.u2", "conv.ovf.i4", "conv.ovf.u4",
                                          "conv.ovf.i8", "conv.ovf.u8", "refanyval", "ckfinite", "mkrefany", "ldtoken",
                                          "conv.u2", "conv.u1", "conv.i", "conv.ovf.i", "conv.ovf.u", "add.ovf", "add.ovf.un",
                                          "mul.ovf", "mul.ovf.un", "sub.ovf", "sub.ovf.un", "endfinally", "leave", "leave.s", "stind.i",
                                          "conv.u", "prefix7", "prefix6", "prefix5", "prefix4", "prefix3", "prefix2", "prefix1", "prefixref",
                                          "arglist", "ceq", "cgt", "cgt.un", "clt", "clt.un", "ldftn", "ldvirtftn", "ldarg", "ldarga", "starg",
-                                         "ldloc", "ldloca", "stloc", "localloc", "endfilter", "unaligned.", "volatile.", "tail.",
+                                         "ldloc", "ldloca", "stloc", "localloc", "endfilter", "constrained.", "readonly.", "unaligned.", "volatile.", "tail.",
                                          "initobj", "cpblk", "initblk", "rethrow", "sizeof", "refanytype", "illegal", "endmac",
                                          "brnull", "brnull.s", "brzero", "brzero.s", "brinst", "brinst.s", "ldind.u8", "ldelem.u8", "ldc.i4.M1",
                                          "endfault" } ),
