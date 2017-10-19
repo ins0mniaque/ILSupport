@@ -127,13 +127,13 @@
       <Compile Remove="@(Compile)" Condition="'%(Extension)'=='.il'" />
     </ItemGroup>
   </Target>
-  <Target Name="InitializeIL">
+  <Target Name="InitializeIL" Condition="'@(IL)' != ''">
     <PropertyGroup>
       <ILFile>@(IntermediateAssembly->'%(RootDir)%(Directory)%(Filename).il', ' ')</ILFile>
       <ILResourceFile>@(IntermediateAssembly->'%(RootDir)%(Directory)%(Filename).res', ' ')</ILResourceFile>
     </PropertyGroup>
   </Target>
-  <Target Name="CoreDecompile" Inputs="@(IntermediateAssembly)" Outputs="$(ILFile)" Condition=" Exists ( @(IntermediateAssembly) ) ">
+  <Target Name="CoreDecompile" Inputs="@(IntermediateAssembly)" Outputs="$(ILFile)" Condition=" '@(IL)' != '' And Exists ( @(IntermediateAssembly) ) ">
     <GetFrameworkSdkPath>
       <Output TaskParameter="Path" PropertyName="FrameworkSdkPath" />
     </GetFrameworkSdkPath>
@@ -174,7 +174,7 @@
     </PropertyGroup>
     <Delete Files="@(IntermediateAssembly)" />
   </Target>
-  <Target Name="CoreCompileIL" Inputs="@(IL)" Outputs="@(IntermediateAssembly)">
+  <Target Name="CoreCompileIL" Inputs="@(IL)" Outputs="@(IntermediateAssembly)" Condition="'@(IL)' != ''">
     <GetFrameworkPath>
       <Output TaskParameter="Path" PropertyName="FrameworkPath" />
     </GetFrameworkPath>
