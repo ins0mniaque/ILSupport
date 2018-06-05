@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ILSupport.ProjectTemplates</RootNamespace>
     <AssemblyName>ILSupport.ProjectTemplates</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <GeneratePkgDefFile>false</GeneratePkgDefFile>
     <IncludeAssemblyInVSIXContainer>false</IncludeAssemblyInVSIXContainer>
@@ -132,6 +132,7 @@
       <DependentUpon>PortableLibrary.tt</DependentUpon>
     </None>
     <None Include="FSharp\PortableLibrary\PortableLibrary1.il" />
+    <None Include="IL Support.Standard.targets" />
     <None Include="Properties\AssemblyInfo.cs" />
     <None Include="IL Support.targets" />
     <None Include="VisualBasic\ClassLibrary\AssemblyInfo.vb" />
@@ -187,6 +188,7 @@
     <None Include="VisualBasic\WPFApplication\Settings.settings" />
     <VSTemplate Include="CSharp\ClassLibrary\ClassLibrary.vstemplate">
       <OutputSubPath>IL Support</OutputSubPath>
+      <SubType>Designer</SubType>
     </VSTemplate>
     <VSTemplate Include="CSharp\ConsoleApplication\ConsoleApplication.vstemplate">
       <OutputSubPath>IL Support</OutputSubPath>
@@ -264,6 +266,28 @@
     </VSTemplate>
   </ItemGroup>
   <ItemGroup>
+    <VSTemplate Include="CSharp\ClassLibraryStandard\ClassLibrary.vstemplate" />
+    <Content Include="CSharp\ClassLibraryCore\ClassLibrary.csproj">
+      <DependentUpon>ClassLibrary.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Content>
+    <Content Include="CSharp\ClassLibraryCore\ClassLibrary.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ClassLibrary.csproj</LastGenOutput>
+    </Content>
+    <VSTemplate Include="CSharp\ClassLibraryCore\ClassLibrary.vstemplate">
+      <SubType>Designer</SubType>
+    </VSTemplate>
+    <Content Include="CSharp\ClassLibraryStandard\ClassLibrary.csproj">
+      <DependentUpon>ClassLibrary.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Content>
+    <Content Include="CSharp\ClassLibraryStandard\ClassLibrary.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ClassLibrary.csproj</LastGenOutput>
+    </Content>
     <Content Include="CSharp\ClassLibrary\ClassLibrary.csproj">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -387,6 +411,18 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CSharp\ClassLibraryStandard\Class1.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CSharp\ClassLibraryStandard\Class1.il" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CSharp\ClassLibraryCore\Class1.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CSharp\ClassLibraryCore\Class1.il" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,0 +1,13 @@
+﻿<#@ template debug="false" hostspecific="false" #>
+<#@ assembly name="System.Core" #>
+<#@ output extension=".csproj" #>
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <#@ include file="..\..\IL Support.Standard.targets" #>
+
+</Project>
