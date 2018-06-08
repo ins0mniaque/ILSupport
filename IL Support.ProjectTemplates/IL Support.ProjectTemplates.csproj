@@ -266,7 +266,9 @@
     </VSTemplate>
   </ItemGroup>
   <ItemGroup>
-    <VSTemplate Include="CSharp\ClassLibraryStandard\ClassLibrary.vstemplate" />
+    <VSTemplate Include="CSharp\ClassLibraryStandard\ClassLibrary.vstemplate">
+      <OutputSubPath>IL Support</OutputSubPath>
+    </VSTemplate>
     <Content Include="CSharp\ClassLibraryCore\ClassLibrary.csproj">
       <DependentUpon>ClassLibrary.tt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -278,6 +280,7 @@
     </Content>
     <VSTemplate Include="CSharp\ClassLibraryCore\ClassLibrary.vstemplate">
       <SubType>Designer</SubType>
+      <OutputSubPath>IL Support</OutputSubPath>
     </VSTemplate>
     <Content Include="CSharp\ClassLibraryStandard\ClassLibrary.csproj">
       <DependentUpon>ClassLibrary.tt</DependentUpon>
