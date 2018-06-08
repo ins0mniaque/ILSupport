@@ -39,6 +39,8 @@ The following projects are included:
 Modifying your own projects to allow IL embedding
 -------------------------------------------------
 
+#.NET Framework
+
   1. Edit your project file and insert [this](https://raw.github.com/ins0mniaque/ILSupport/master/IL%20Support.ProjectTemplates/IL%20Support.targets) __before__ the following section (which should be at the end)
 ```xml
 <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
@@ -51,6 +53,10 @@ Modifying your own projects to allow IL embedding
 ```
 
   2. You're done! Create a new project with IL Support if you need an example of how to embed IL.
+
+#.NET Standard/Core
+
+With the new Visual Studio `.csproj` format, the targets are slightly different.  Complete the steps for .NET Framework, except use [this](https://raw.github.com/ins0mniaque/ILSupport/master/IL%20Support.ProjectTemplates/IL%20Support.Standard.targets) anywhere in your project file
 
 How does it work ?
 ------------------
