@@ -4,9 +4,8 @@
     <Name>Class Library (.NET Core) with IL Support</Name>
     <Description>A project for creating a C# .NET Core class library (.dll) that supports embedding and calling IL code</Description>
     <Icon Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="4547" />
-    <TemplateID>ILSupport.CSharp.ClassLibraryCore</TemplateID>
     <ProjectType>CSharp</ProjectType>
-    <SortOrder>20</SortOrder>
+    <SortOrder>200</SortOrder>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
     <CreateNewFolder>true</CreateNewFolder>
     <DefaultName>ClassLibrary</DefaultName>

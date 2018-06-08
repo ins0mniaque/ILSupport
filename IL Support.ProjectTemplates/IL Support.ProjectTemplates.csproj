@@ -202,6 +202,12 @@
     <VSTemplate Include="CSharp\WPFApplication\WPFApplication.vstemplate">
       <OutputSubPath>IL Support</OutputSubPath>
     </VSTemplate>
+    <VSTemplate Include="CSharp\ClassLibraryStandard\ClassLibrary.vstemplate">
+      <OutputSubPath>.NET Standard</OutputSubPath>
+    </VSTemplate>
+    <VSTemplate Include="CSharp\ClassLibraryCore\ClassLibrary.vstemplate">
+      <OutputSubPath>.NET Core</OutputSubPath>
+    </VSTemplate>
     <VSTemplate Include="FSharp\ConsoleApplication\ConsoleApplication.vstemplate">
       <OutputSubPath>IL Support</OutputSubPath>
     </VSTemplate>
@@ -266,7 +272,6 @@
     </VSTemplate>
   </ItemGroup>
   <ItemGroup>
-    <VSTemplate Include="CSharp\ClassLibraryStandard\ClassLibrary.vstemplate" />
     <Content Include="CSharp\ClassLibraryCore\ClassLibrary.csproj">
       <DependentUpon>ClassLibrary.tt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -276,9 +281,6 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>ClassLibrary.csproj</LastGenOutput>
     </Content>
-    <VSTemplate Include="CSharp\ClassLibraryCore\ClassLibrary.vstemplate">
-      <SubType>Designer</SubType>
-    </VSTemplate>
     <Content Include="CSharp\ClassLibraryStandard\ClassLibrary.csproj">
       <DependentUpon>ClassLibrary.tt</DependentUpon>
       <AutoGen>True</AutoGen>

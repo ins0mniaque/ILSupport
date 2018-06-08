@@ -4,10 +4,9 @@
     <Name>WPF Application with IL Support</Name>
     <Description>A project for creating a Windows Presentation Foundation client application that supports embedding and calling IL code</Description>
     <Icon Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4602" />
-    <TemplateID>ILSupport.CSharp.WPFApplication</TemplateID>
     <ProjectType>CSharp</ProjectType>
     <RequiredFrameworkVersion>3.0</RequiredFrameworkVersion>
-    <SortOrder>11</SortOrder>
+    <SortOrder>10</SortOrder>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
     <CreateNewFolder>true</CreateNewFolder>
     <DefaultName>WpfApplication</DefaultName>
