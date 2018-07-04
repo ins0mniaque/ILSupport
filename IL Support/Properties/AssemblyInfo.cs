@@ -6,10 +6,10 @@ using System.Runtime.InteropServices;
 [ assembly: AssemblyConfiguration ( "" ) ]
 [ assembly: AssemblyCompany       ( "" ) ]
 [ assembly: AssemblyProduct       ( "IL Support" ) ]
-[ assembly: AssemblyCopyright     ( "Copyright © 2012-2017 Jean-Philippe Leconte" ) ]
+[ assembly: AssemblyCopyright     ( "Copyright © 2012-2018 Jean-Philippe Leconte" ) ]
 [ assembly: AssemblyTrademark     ( "" ) ]
 [ assembly: AssemblyCulture       ( "" ) ]
 [ assembly: ComVisible            ( false ) ]
 
-[ assembly: AssemblyVersion       ( "2.3.0.0" ) ]
-[ assembly: AssemblyFileVersion   ( "2.3.0.0" ) ]
+[ assembly: AssemblyVersion       ( "2.4.0.0" ) ]
+[ assembly: AssemblyFileVersion   ( "2.4.0.0" ) ]
