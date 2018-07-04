@@ -4,10 +4,9 @@
     <Name>Console Application with IL Support</Name>
     <Description>A project for creating a command-line application that supports embedding and calling IL code</Description>
     <Icon Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="4548" />
-    <TemplateID>ILSupport.CSharp.ConsoleApplication</TemplateID>
     <ProjectType>CSharp</ProjectType>
     <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
-    <SortOrder>12</SortOrder>
+    <SortOrder>20</SortOrder>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
     <CreateNewFolder>true</CreateNewFolder>
     <DefaultName>ConsoleApplication</DefaultName>

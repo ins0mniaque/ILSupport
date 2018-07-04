@@ -4,8 +4,8 @@
     <Name>Empty Project with IL Support</Name>
     <Description>An empty project for creating a local application that supports embedding and calling IL code</Description>
     <Icon Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="4549" />
-    <TemplateID>ILSupport.CSharp.EmptyProject</TemplateID>
     <ProjectType>CSharp</ProjectType>
+    <SortOrder>70</SortOrder>
     <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
     <CreateNewFolder>true</CreateNewFolder>
     <DefaultName>Project</DefaultName>
