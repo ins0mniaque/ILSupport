@@ -1,7 +1,7 @@
 IL Support extension
 ====================
 
-IL Support is an extension for Visual Studio 2012, 2013, 2015 and 2017 that provides syntax highlighting for the IL (Intermediate Language) and project templates for C#, F# and Visual Basic that support embedding and calling IL code. You can download it through the Extension Manager, or on the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=ins0mniaque.ILSupport).
+IL Support is an extension for Visual Studio 2017 and 2019 that provides syntax highlighting for the IL (Intermediate Language) and project templates for C#, F# and Visual Basic that support embedding and calling IL code. You can download it through the Extension Manager, or on the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=ins0mniaque.ILSupport).
 
 Syntax Highlighting
 -------------------
@@ -11,7 +11,7 @@ IL Support includes a simple syntax highlighter for IL files (.il). It adds 3 co
 Project Templates
 -----------------
 
-IL Support includes multiple project templates that support embedding and calling IL code in addition to another language (C#, F# and Visual Basic). The generated projects have no dependencies and should build on any Visual Studio 2010/2012/2013/2015/2017 installation, even without this extension installed. They support all the project properties and configurations, build incrementally, and allow breakpoints and debugging step by step in both the main language and the IL.
+IL Support includes multiple project templates that support embedding and calling IL code in addition to another language (C#, F# and Visual Basic). The generated projects have no dependencies and should build on any Visual Studio 2010/2012/2013/2015/2017/2019 installation, even without this extension installed. They support all the project properties and configurations, build incrementally, and allow breakpoints and debugging step by step in both the main language and the IL.
 
 Every non-empty project contains a simple example showing how to embed IL.
 
