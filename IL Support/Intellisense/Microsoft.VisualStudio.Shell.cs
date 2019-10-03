@@ -1,10 +1,11 @@
 ﻿using System;
+using System.Windows.Threading;
 
 using EnvDTE;
 
 namespace ILSupport.Intellisense
 {
-    internal class VSConstants
+    internal static class VSConstants
     {
         public const int S_OK = 0;
 
@@ -21,12 +22,14 @@ namespace ILSupport.Intellisense
         }
     }
 
-    internal class VsShellUtilities
+    internal static class VsShellUtilities
     {
         public static bool IsInAutomationFunction ( IServiceProvider serviceProvider )
         {
             if ( serviceProvider == null )
                 throw new ArgumentException ( "serviceProvider" );
+
+            Dispatcher.CurrentDispatcher.VerifyAccess ( );
 
             var vsExtensibility = serviceProvider.GetService ( typeof ( IVsExtensibility ) ) as IVsExtensibility;
             if ( vsExtensibility == null )

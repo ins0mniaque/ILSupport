@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel.Composition;
 using System.Runtime.InteropServices;
+using System.Windows.Threading;
 
 using Microsoft.VisualStudio;
 using Microsoft.VisualStudio.Editor;
@@ -55,11 +56,15 @@ namespace ILSupport.Intellisense
 
         public int QueryStatus ( ref Guid pguidCmdGroup, uint cCmds, OLECMD [ ] prgCmds, IntPtr pCmdText )
         {
+            Dispatcher.CurrentDispatcher.VerifyAccess ( );
+
             return m_nextCommandHandler.QueryStatus ( ref pguidCmdGroup, cCmds, prgCmds, pCmdText );
         }
 
         public int Exec ( ref Guid pguidCmdGroup, uint nCmdID, uint nCmdexecopt, IntPtr pvaIn, IntPtr pvaOut )
         {
+            Dispatcher.CurrentDispatcher.VerifyAccess ( );
+
             if ( VsShellUtilities.IsInAutomationFunction ( m_provider.ServiceProvider ) )
                 return m_nextCommandHandler.Exec ( ref pguidCmdGroup, nCmdID, nCmdexecopt, pvaIn, pvaOut );
 
