@@ -77,7 +77,7 @@ namespace ILSupport
                                          "brnull", "brnull.s", "brzero", "brzero.s", "brinst", "brinst.s", "ldind.u8", "ldelem.u8", "ldc.i4.M1",
                                          "endfault" } ),
             new WordCategory ( PredefinedClassificationTypeNames.Keyword,
-                               new [ ] { "void", "bool", "char", "wchar", "int", "int8", "int16", "int32", "int64", "float", "float32", "float64",
+                               new [ ] { "void", "bool", "char", "wchar", "int", "int8", "int16", "int32", "int64", "uint8", "uint16", "uint32", "uint64", "float", "float32", "float64",
                                          "refany", "typedref", "object", "string", "native", "unsigned", "value", "valuetype", "class", "const",
                                          "vararg", "default", "stdcall", "thiscall", "fastcall", "unmanaged", "not_in_gc_heap", "beforefieldinit",
                                          "instance", "filter", "catch", "static", "public", "private", "synchronized", "interface", "extends",
