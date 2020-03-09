@@ -1,3 +1,5 @@
+[![Visual Studio Marketplace](https://img.shields.io/visual-studio-marketplace/i/ins0mniaque.ILSupport.svg)](https://marketplace.visualstudio.com/items?itemName=ins0mniaque.ILSupport) [![License](https://img.shields.io/github/license/ins0mniaque/ILSupport.svg)](LICENSE)
+
 IL Support extension
 ====================
 
